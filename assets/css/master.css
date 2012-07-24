@@ -53,7 +53,7 @@ body {
 	/*  only one view is displayed at a time
 	    so we'll set the views to default to be un-displayed
 	    and then override this based on the element id */
-	display: none;
+	display: block;
 }
 /* our three views */
 #welcome {
