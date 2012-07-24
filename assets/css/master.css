@@ -54,10 +54,6 @@ body {
 	    so we'll set the views to default to be un-displayed
 	    and then override this based on the element id */
 	display: block;
-}
-/* our three views */
-#welcome {
-  display: block;  
-  background:#FFF;
+        background:#FFF;
 }
 
