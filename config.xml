@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
+	id		= "com.myttpro.time.tracker"
 	version 	= "1.0.0">
 
-	<name>PhoneGap: Getting Started</name>
+	<name>My Time Tracker Pro</name>
 
 	<description>
-		A template for getting started with PhoneGap development and build.phonegap.com
+		Time Tracker Pro is the easiest and fastest way to track your billable hours and generate high quality professional looking invoices
 	</description>
 
 	<author href="http://alunny.github.com"
