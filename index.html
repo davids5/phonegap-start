@@ -6,34 +6,13 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
             <title>My Time Tracker Pro</title>         
-            <script type="text/javascript" charset="utf-8" src="phonegap.min.js"></script>
-            <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
-            <script type="text/javascript" charset="utf-8">
-                function onBodyLoad()
-                {
-                    document.addEventListener("deviceready",onDeviceReady,false);
-                }
-                /* PhoneGap has been initialized and is ready to roll */
-                function onDeviceReady()
-                {
-                    phoneGapReady.innerHTML = "Please Wait...";
-		    openChildBrowser('http://www.myttpro.com');
-                }
-                function openChildBrowser(url)
-                {
-                    try {
-                        window.plugins.childBrowser.showWebPage(url);
-                    }
-                    catch (err)
-                    {
-                        alert(err);
-                    }
-                }
-                </script>
+            <script src="phonegap.js"></script>
+	    <script src="childbrowser.js"></script>
     </head>
-    <body onload="onBodyLoad()">
+    <body>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">Please wait..
-		 <button onclick="openChildBrowser('http://www.myttpro.com');">Open myttpro</button>
+		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com');">Open myttpro</button>
+		</div>
 	</body>
 </html>

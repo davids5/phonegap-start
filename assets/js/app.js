@@ -7,9 +7,14 @@ run(function () {
         if (navigator.network.connection.type == Connection.NONE) {
             alert("No internet connection - we won't be able to track your time");
         } else {
-		window.plugins.childBrowser.showWebPage('http://myttpro.com',
-				{ showLocationBar: true });
-
+		try {
+                    phoneGapReady.innerHTML = "Please Wait...";
+                    window.plugins.childBrowser.showWebPage(url);
+                    }
+                    catch (err)
+                    {
+                        alert(err);
+                    }
         }
     })();
 });
