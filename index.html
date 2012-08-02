@@ -6,14 +6,17 @@
 		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
 		
 		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="childbrowser.js"></script>
 		
 	</head>
 	<body>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">Please wait..
+		<gap:plugin name="ChildBrowser" /> <!-- latest release -->
 		</div>
-		<script >
-	            window.location.href = "http://myttpro.com";
+		<script> 		
+		window.plugins.childBrowser.showWebPage('http://myttpro.com',
+                                        { showLocationBar: true });
 		</script>
 	</body>
 </html>
