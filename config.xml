@@ -20,7 +20,7 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<preference name="orientation" value="portrait" />
-	<plugin name="ChildBrowser" value="com.phonegap.plugins.childBrowser.ChildBrowser"/>
+	<gap:plugin name="ChildBrowser" /> <!-- latest release -->
 	<access origin="http://myttpro.com" />
 
 </widget>
