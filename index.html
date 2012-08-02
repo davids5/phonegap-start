@@ -7,9 +7,8 @@
             <link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
             <title>My Time Tracker Pro</title>         
             <script type="text/javascript" charset="utf-8" src="phonegap.min.js"></script>
-            <script type="text/javascript" charset="utf-8" src="ChildBrowser.js"></script>
+            <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
             <script type="text/javascript" charset="utf-8">
-                var childBrowser;
                 function onBodyLoad()
                 {
                     document.addEventListener("deviceready",onDeviceReady,false);
@@ -18,7 +17,6 @@
                 function onDeviceReady()
                 {
                     phoneGapReady.innerHTML = "Please Wait...";
-                    childBrowser = ChildBrowser.install();
 		    openChildBrowser('http://www.myttpro.com');
                 }
                 function openChildBrowser(url)

@@ -18,9 +18,9 @@
 	<icon src="icon.png" gap:role="default" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://plugins.phonegap.com/ChildBrowser/3.0.1" />
 
 	<preference name="orientation" value="portrait" />
-	<gap:plugin name="ChildBrowser" /> <!-- latest release -->
 	<access origin="http://myttpro.com" />
 
 </widget>
