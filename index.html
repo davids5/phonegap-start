@@ -16,11 +16,10 @@
 		{
 			alert("Open " + newurl);
 		}
-		function openUrl(url,option)
+		function openUrl(url,options)
 		{
 			window.plugins.childBrowser.onLocationChange = locationChanged;
-			window.plugins.childBrowser.openExternal(url,option);
-			locationChanged(url);
+			window.plugins.childBrowser.showWebPage(url, options);
 		}
 	</script>
     </head>
