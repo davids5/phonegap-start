@@ -10,4 +10,3 @@ var run = function(application) {
 }
 
 
-};
