@@ -8,7 +8,7 @@ run(function () {
             alert("No internet connection - we won't be able to track your time");
         } else {
 		try {
-                        window.plugins.childBrowser.openExternal("http://myttpro.com",0);        
+                        //window.plugins.childBrowser.openExternal("http://myttpro.com",true);        
                     }
                     catch (err)
                     {
