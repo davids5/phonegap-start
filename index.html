@@ -14,12 +14,13 @@
 	<script type="text/javascript" charset="utf-8">
 		function locationChanged(newurl)
 		{
-			alert(newurl);
+			alert("Open " + newurl);
 		}
 		function openUrl(url,option)
 		{
 			window.plugins.childBrowser.onLocationChange = locationChanged;
 			window.plugins.childBrowser.openExternal(url,option);
+			locationChanged(url);
 		}
 	</script>
     </head>
