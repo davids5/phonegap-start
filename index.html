@@ -11,16 +11,27 @@
 	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		function locationChanged(newurl)
+		{
+			alert(newurl);
+		}
+		function openUrl(url,option)
+		{
+			window.plugins.childBrowser.onLocationChange = locationChanged;
+			window.plugins.childBrowser.openExternal(url,option);
+		}
+	</script>
     </head>
     <body onload=>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">Please wait..
 		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com',
 								{ showLocationBar: false, showNavigationBar: false, showAddress: false});">Open myttpro</button>
-		 <button onclick="window.plugins.childBrowser.openExternal('http://myttpro.com',0);  ">0</button>      
-		 <button onclick="window.plugins.childBrowser.openExternal('http://myttpro.com',1);  ">1</button>      
-		 <button onclick="window.plugins.childBrowser.openExternal('http://myttpro.com',true);  ">true</button>      
-		 <button onclick="window.plugins.childBrowser.openExternal('http://myttpro.com',false);  ">false</button>      
+		 <button onclick="openUrl('http://myttpro.com',0);  ">0</button>      
+		 <button onclick="openUrl('http://myttpro.com',1);  ">1</button>      
+		 <button onclick="openUrl('http://myttpro.com',true);  ">true</button>      
+		 <button onclick="openUrl('http://myttpro.com',false);  ">false</button>      
 		</div>
 	</body>
 </html>
