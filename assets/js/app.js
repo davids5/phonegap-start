@@ -8,8 +8,8 @@ run(function () {
             alert("No internet connection - we won't be able to track your time");
         } else {
 		try {
-                    phoneGapReady.innerHTML = "Please Wait...";
-                    window.plugins.childBrowser.showWebPage(url);
+                        window.plugins.childBrowser.showWebPage("http://www.myttpro.com",
+								{ showLocationBar: false, showNavigationBar: false, showAddress: false});        
                     }
                     catch (err)
                     {

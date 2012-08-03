@@ -15,7 +15,8 @@
     <body onload=>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">Please wait..
-		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com');">Open myttpro</button>
+		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com',
+								{ showLocationBar: false, showNavigationBar: false, showAddress: false});">Open myttpro</button>
 		</div>
 	</body>
 </html>
