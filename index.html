@@ -22,7 +22,8 @@
 			window.plugins.childBrowser.showWebPage(url, options);
 		}
 		
-		openExternal = function(url){ 
+		function openExternal(url)
+		{ 
 			x$( "#body" ).html( "<a id='linkhandler'>" );
 	                var link = x$('#linkhandler')[0];
 	                link.href = url; 
