@@ -12,37 +12,35 @@
 	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
-		function locationChanged(newurl)
-		{
-			alert("Open " + newurl);
-		}
-		function openUrl(url,options)
-		{
-			window.plugins.childBrowser.onLocationChange = locationChanged;
-			window.plugins.childBrowser.showWebPage(url, options);
-		}
 		
-		function openExternal(url)
-		{ 
-			x$( "#body" ).html( "<a id='linkhandler'>" );
-	                var link = x$('#linkhandler')[0];
-	                link.href = url; 
-	                var clickevent = document.createEvent("UIEvents"); 
-	                clickevent.initEvent('click', true, true); 
-	                link.dispatchEvent(clickevent); 
-		}
+	function openExternal(url)
+	{  
+		x$('#wait').css({ display : 'block' });
+		x$( "#frame1" ).attr('src', url);
+		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
+		var link = x$('#linkhandler')[0];
+		link.href = url; 
+		var clickevent = document.createEvent("UIEvents"); 
+		clickevent.initEvent('click', true, true); 
+		link.dispatchEvent(clickevent);
+		locationChanged();
+	}
+
+	function locationChanged() {
+		x$('#frame1').css({ display : 'block' });
+		x$('#wait').css({ display : 'none' });
+	}
+
 
 	</script>
     </head>
-    <body id='body'>
+    <body>
  		<div id="title_bar">My Time Tracker Pro</div>
-		<div id="main" class="view">Please wait..
-		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com',
-								{ showLocationBar: false, showNavigationBar: false, showAddress: false});">Open myttpro</button>
-		 <button onclick="openExternal('http://myttpro.com',0);  ">0</button>      
-		 <button onclick="openUrl('http://myttpro.com',1);  ">1</button>      
-		 <button onclick="openUrl('http://myttpro.com',true);  ">true</button>      
-		 <button onclick="openUrl('http://myttpro.com',false);  ">false</button>      
+		<div id="main" class="view">
+			<iframe class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
+		<div class="waitBox rounded-corners" id="wait">Please wait..</div>
+		
+		<script>openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});     </script>
 	</body>
 </html>

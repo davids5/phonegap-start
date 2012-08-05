@@ -27,8 +27,48 @@ body {
 #back_button {
   background: grey;
 }
+
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.waitBox {
+	
+	color:#fff;
+	text-align:center;
+	background:#666;
+	z-index: 20;
+	padding:15px;
+	border: 1px solid #000;
+  	position:absolute;
+	width:auto;
+	height:auto; 
+	display:none; 
+	z-index:99; 
+	top:50%; 
+	left:50%; 
+	margin-top:-25px; 
+	margin-left:-65px;
+
+}
+
  
+ .frame
+ {
+	width: 100%;
+	height:100%; 
+	border: none;
+	overflow-y: auto;
+	overflow-x: auto;
+	z-index: 20;
+	display:block; 
+ }
 .view {
+	width: 100%;
+	height:95%; 
 	padding: 0;
 	margin: 0;
 	display: block;
