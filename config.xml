@@ -37,7 +37,7 @@
 	<gap:splash src="assets/images/splash-xdpi.png" gap:platform="android" gap:density="xdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
-	<gap:plugin name="ChildBrowser" version="~3" /> 
+	<!--gap:plugin name="ChildBrowser" version="~3" /--> 
 
 	<preference name="orientation" value="default" />
 	<preference name="fullscreen" value="false" />
