@@ -13,6 +13,20 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		
+		
+
+	function onLocationChange(func, time) {
+	if(!time) time = 500;
+	var currLoc = '';
+	setInterval(function() {
+		if(window.location.href != currLoc)
+		{
+		    currLoc = window.location.href;
+		    func(); //execute function
+		}
+		}, time);
+	}
+ 
 	function openExternal(url)
 	{  
 		x$('#wait').css({ display : 'block' });
@@ -23,7 +37,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		locationChanged();
+		onLocationChange(locationChanged,100);
 	}
 
 	function locationChanged() {
