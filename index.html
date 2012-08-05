@@ -6,7 +6,8 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
 	<title>My Time Tracker Pro</title>
-	<script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="phonegap.js" type="text/javascript" charset="utf-8" ></script>
+	<!--script src="assets/js/sim/phonegap-1.1.0.js" type="text/javascript" charset="utf-8" ></script-->
 	<script src="childbrowser.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
@@ -44,10 +45,12 @@
 	}
 
 	function busy() {
+		navigator.notification.activityStart();
 		state = 'busy';	
 		x$('#wait').css({ display : 'block' });
 	}
 	function ready() {
+		navigator.notification.activityStop();
 		state = 'ready';	
 		x$('#wait').css({ display : 'none' });
 	}
