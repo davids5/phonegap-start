@@ -21,14 +21,24 @@
 			window.plugins.childBrowser.onLocationChange = locationChanged;
 			window.plugins.childBrowser.showWebPage(url, options);
 		}
+		
+		openExternal = function(url){ 
+			x$( "#body" ).html( "<a id='linkhandler'>" );
+	                var link = x$('#linkhandler')[0];
+	                link.href = url; 
+	                var clickevent = document.createEvent("UIEvents"); 
+	                clickevent.initEvent('click', true, true); 
+	                link.dispatchEvent(clickevent); 
+		}
+
 	</script>
     </head>
-    <body onload=>
+    <body id='body'>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">Please wait..
 		 <button onclick="window.plugins.childBrowser.showWebPage('http://www.myttpro.com',
 								{ showLocationBar: false, showNavigationBar: false, showAddress: false});">Open myttpro</button>
-		 <button onclick="openUrl('http://myttpro.com',0);  ">0</button>      
+		 <button onclick="openExternal('http://myttpro.com',0);  ">0</button>      
 		 <button onclick="openUrl('http://myttpro.com',1);  ">1</button>      
 		 <button onclick="openUrl('http://myttpro.com',true);  ">true</button>      
 		 <button onclick="openUrl('http://myttpro.com',false);  ">false</button>      
