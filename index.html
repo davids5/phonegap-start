@@ -19,9 +19,9 @@
 	if(!time) time = 500;
 	var currLoc = '';
 	setInterval(function() {
-		if(window.location.href != currLoc)
+		if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 		{
-		    currLoc = window.location.href;
+		    currLoc = document.getElementById("frame1").contentDocument.location.href ;
 		    func(); //execute function
 		}
 		}, time);
