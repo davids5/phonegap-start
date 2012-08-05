@@ -29,6 +29,7 @@
  
 	function openExternal(url)
 	{  
+		x$('#frame1').css({ display : 'none' });
 		x$('#wait').css({ display : 'block' });
 		x$( "#frame1" ).attr('src', url);
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
@@ -37,7 +38,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		onLocationChange(locationChanged,100);
+		onLocationChange(locationChanged,300);
 	}
 
 	function locationChanged() {
