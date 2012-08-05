@@ -20,10 +20,12 @@
 	var currLoc = '';
 	
 	setInterval(function() {
-		if(document.getElementById("frame1").contentDocument.location.href  != currLoc != currLoc)
+		if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 		{
 		    currLoc = document.getElementById("frame1").contentDocument.location.href ;
 		    func(); //execute function
+		} else {
+			ready();
 		}
 		}, time);
 	}
