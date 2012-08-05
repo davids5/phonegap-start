@@ -13,13 +13,14 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		
-		
+	var state = 'ready';	
 
 	function onLocationChange(func, time) {
 	if(!time) time = 500;
 	var currLoc = '';
+	
 	setInterval(function() {
-		if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
+		if(document.getElementById("frame1").contentDocument.location.href  != currLoc != currLoc)
 		{
 		    currLoc = document.getElementById("frame1").contentDocument.location.href ;
 		    func(); //execute function
@@ -28,9 +29,8 @@
 	}
  
 	function openExternal(url)
-	{  
-		x$('#frame1').css({ display : 'none' });
-		x$('#wait').css({ display : 'block' });
+	{
+		busy();
 		x$( "#frame1" ).attr('src', url);
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
 		var link = x$('#linkhandler')[0];
@@ -38,11 +38,15 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		//onLocationChange(locationChanged,1);
+		onLocationChange(busy,10);
 	}
 
-	function locationChanged() {
-		x$('#frame1').css({ display : 'block' });
+	function busy() {
+		state = 'busy';	
+		x$('#wait').css({ display : 'block' });
+	}
+	function ready() {
+		state = 'ready';	
 		x$('#wait').css({ display : 'none' });
 	}
 
@@ -52,9 +56,11 @@
     <body>
  		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">
-			<iframe onload="locationChanged()"  class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+			<iframe onload="ready()"  class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
 		<div class="waitBox rounded-corners" id="wait">Please wait..</div>
-
+<script>	
+		openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});
+		</script>
 	</body>
 </html>
