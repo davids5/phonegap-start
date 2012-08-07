@@ -28,8 +28,8 @@
 
 	<gap:splash src="assets/images/splash-320x480png" width="320" height="480" />
 	<gap:splash src="assets/images/splash-640x960.png" width="640" height="960" />
-	<gap:splash src="assets/images/splash-.png-1024x768.png" width="1024" height="768" />
-	<gap:splash src="assets/images/splash-.png-768x1024.png" width="768" height="1024" />
+	<gap:splash src="assets/images/splash-1024x768.png" width="1024" height="768" />
+	<gap:splash src="assets/images/splash-768x1024.png" width="768" height="1024" />
 
 	<gap:splash src="assets/images/splash-ldpi.png" gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="assets/images/splash-mdpi.png" gap:platform="android" gap:density="mdpi" />
