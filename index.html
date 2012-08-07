@@ -37,7 +37,9 @@
 		x$( "#frame1" ).attr('src', url);
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
 		var link = x$('#linkhandler')[0];
-		link.href = url; 
+		link.href = url;
+		//link.setAttribute('target', '_self')
+		
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
