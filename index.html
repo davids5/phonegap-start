@@ -47,12 +47,10 @@
 	}
 
 	function busy() {
-		navigator.notification.activityStart();
 		state = 'busy';	
 		x$('#wait').css({ display : 'block' });
 	}
 	function ready() {
-		navigator.notification.activityStop();
 		state = 'ready';	
 		x$('#wait').css({ display : 'none' });
 	}
@@ -67,7 +65,7 @@
 		</div>
 		<div class="waitBox rounded-corners" id="wait">Please wait..</div>
 <script>	
-		openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});
+		//openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});
 		</script>
 	</body>
 </html>
