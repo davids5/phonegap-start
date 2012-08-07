@@ -19,14 +19,16 @@
 	function onLocationChange(func, time) {
 	if(!time) time = 500;
 	var currLoc = '';
+	var currSrc = '';
 	
 	setInterval(function() {
-		if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
+		if(document.getElementById("frame1").contentDocument.location.href  != currLoc || document.getElementById("frame1").src != currSrc)
 		{
 		    currLoc = document.getElementById("frame1").contentDocument.location.href ;
+		    currSrc = document.getElementById("frame1").src;
 		    func(); //execute function
 		} else {
-			ready();
+			var id = setInterval(function() {ready(); clearInterval(id );},250);
 		}
 		}, time);
 	}
