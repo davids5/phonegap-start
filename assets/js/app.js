@@ -22,10 +22,6 @@ run(function () {
             alert("No internet connection - we won't be able to track your time");
         } else {
 		try {
-			setInterval(function() {
-			    log(document.getElementById('frame1').contentDocument.location.href);
-			    log(document.getElementById('frame1').src);
-			},500);
 			initListener();
 			openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});     
                     }

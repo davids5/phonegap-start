@@ -28,12 +28,8 @@
         }
 
         function processIFrameClick() {
-            if(isOverIFrame) {
-                // replace with your function
-                log("IFrame >> CLICK << detected. ");
+		log("IFrame >> CLICK << detected. ");
 		busy();
-
-            }
         }
 
         function log(message) {
@@ -56,15 +52,15 @@
 	function onLocationChange(func, time) {
 	if(!time) time = 500;
 	var currLoc = '';
-	var currSrc = '';
 		setInterval(function() {
-			if(document.getElementById("frame1").contentDocument.location.href  != currLoc || document.getElementById("frame1").src != currSrc)
+			if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 			{
+		            top.focus();
 			    currLoc = document.getElementById("frame1").contentDocument.location.href ;
-			    currSrc = document.getElementById("frame1").src;
+			    log(currLoc);
 			    func(); //execute function
 			} else {
-				var id = setInterval(function() {ready(); clearInterval(id );},250);
+//				var id = setInterval(function() {ready(); clearInterval(id );},250);
 			}
 			}, time);
 	}
@@ -82,7 +78,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-//		onLocationChange(busy,10);
+		onLocationChange(busy,100);
 	}
 
 	function busy() {
