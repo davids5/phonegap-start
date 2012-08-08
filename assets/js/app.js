@@ -3,11 +3,6 @@
 //
 
 function initListener() {
-      var element = document.getElementsByTagName("iframe");
-      for (var i=0; i<element.length; i++) {
-	  element[i].onmouseover = processMouseOver;
-	  element[i].onmouseout = processMouseOut;
-      }
       if (typeof window.attachEvent != 'undefined') {
 	  top.attachEvent('onblur', processIFrameClick);
       }
