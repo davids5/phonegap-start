@@ -19,8 +19,12 @@
 	var wdID = -1;
         function processIFrameClick() {
 
-		wdID = setTimeout(function() { ready();},2500);
-		busy();
+		wdID = setTimeout(function() {
+				if (document.getElementById("frame1").contentDocument.readyState != 'complete') {
+					busy();
+				}
+				
+			},200);
 
         }
 
@@ -29,12 +33,6 @@
 	if(!time) time = 500;
 	var currLoc = '';
 		setInterval(function() {
-			try {
-				
-			x$('#title_bar').html("m:"+document.readyState + " f:" + document.getElementById("frame1").contentDocument.readyState);
-
-			} catch (err)
-			{}
 			if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 			{
 			    clearTimeout(wdID);
@@ -60,7 +58,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		onLocationChange(busy,100);
+		//onLocationChange(busy,100);
 
 
 	}
