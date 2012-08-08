@@ -40,11 +40,12 @@
 
 	</script>
     </head>
-    <body onload="openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});">
-		<div id="title_bar">!My Time Tracker Pro</div>
+    <body onLoad="openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});">
 		<div id="main" class="view">
 			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
-		<div class="waitBox rounded-corners" id="wait"><img src="assets/images/ajax-loader.gif"> Hang On...</div>
+		<div class="waitBox rounded-corners" id="wait"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> <td valign="middle"><img src="assets/images/ajax-loader.gif" align="middle"></td><td  valign="middle">&nbsp;Hang on...</td></tr></table></div>
+
 	</body>
 </html>
