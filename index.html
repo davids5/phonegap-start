@@ -29,6 +29,12 @@
 	if(!time) time = 500;
 	var currLoc = '';
 		setInterval(function() {
+			try {
+				
+			x$('#title_bar').html("m:"+document.readyState + " f:" + document.getElementById("frame1").contentDocument.readyState);
+
+			} catch (err)
+			{}
 			if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 			{
 			    clearTimeout(wdID);
@@ -54,15 +60,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		//onLocationChange(busy,100);
-
-		document.onreadystatechange = function () {
-			x$('#title_bar').html(document.readyState);
-		}		
-
-		document.getElementById("frame1").contentDocument.onreadystatechange = function () {
-			x$('#title_bar').html("**"+document.getElementById("frame1").contentDocument.readyState);
-		}
+		onLocationChange(busy,100);
 
 
 	}
