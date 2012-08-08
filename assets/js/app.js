@@ -2,21 +2,14 @@
 //  --- our app behavior logic ---
 //
 
-    function iframeClickHandler() {
-       alert("Iframe clicked");
-    }
-
 function initListener() {
     
-
-/*    
-      if (typeof window.attachEvent != 'undefined') {
-	  top.attachEvent('onblur', processIFrameClick);
+        if (typeof window.attachEvent != 'undefined') {
+	    top.attachEvent('onblur', processIFrameClick);
+        }
+	else if (typeof window.addEventListener != 'undefined') {
+	 top.addEventListener('blur', processIFrameClick, false);
       }
-      else if (typeof window.addEventListener != 'undefined') {
-	  top.addEventListener('blur', processIFrameClick, false);
-      }
-*/
   }
 run(function () {
     // immediately invoked on first run

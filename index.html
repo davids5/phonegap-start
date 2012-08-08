@@ -14,10 +14,14 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		
+
+
 	var wdID = -1;
-        function processIFrameClick() { 
-		wdID = setTimeout(function() { ready(); },2500);
+        function processIFrameClick() {
+
+		wdID = setTimeout(function() { ready();},2500);
 		busy();
+
         }
 
 
@@ -38,14 +42,6 @@
  
 	function openExternal(url)
 	{
-		    var iframe = document.getElementById("frame1");
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-    if (typeof iframeDoc.addEventListener != "undefined") {
-	iframeDoc.addEventListener("click", iframeClickHandler, false);
-    } else if (typeof iframeDoc.attachEvent != "undefined") {
-	iframeDoc.attachEvent ("onclick", iframeClickHandler);
-    }
 
 		x$('#frame1').css({ display : 'block' });
 		busy();
@@ -59,6 +55,16 @@
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
 		//onLocationChange(busy,100);
+
+		document.onreadystatechange = function () {
+			x$('#title_bar').html(document.readyState);
+		}		
+
+		document.getElementById("frame1").contentDocument.onreadystatechange = function () {
+			x$('#title_bar').html("**"+document.getElementById("frame1").contentDocument.readyState);
+		}
+
+
 	}
 
 	function busy() {
