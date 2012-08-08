@@ -8,9 +8,20 @@ html {overflow: auto;}
 html, body, div, iframe {margin: 0px; padding: 0px; height: 100%; border: none;} 
 iframe {display: block; width: 100%; border: none; overflow-y: auto; overflow-x: hidden;} 
 </style> 
+    <script>
+	function attatch() {
+		if (window.parent.frames.length <= 0 && window.opener.frame_busy != undefined ) return true;
+		window.parent.x$('a').click(function() {
+				window.opener.frame_busy();	
+				return false;
+			});
+	}
+    </script>
 </head> 
-<body>
-    Hellp
-<iframe id="tree" name="tree" src="http://myttpro.com" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe> 
+<body onload='attatch();'>
+    <a href='test.html'>link</a>
+    <a href='test.html'>link</a>
+    <a href='test.html'>link</a>
+    <a href='test.html'>link</a>
 </body> 
 </html>
