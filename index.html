@@ -18,9 +18,9 @@
 	function openExternal(url)
 	{
 		busy();
-		x$( "#frame1" ).attr('src', url);
-		x$('#frame1').css({ display : 'block' });
-		x$( "#main" ).before( "<a id='linkhandler' >" );
+		x$( "#frame0" ).attr('src', url);
+		x$('#frame0').css({ display : 'block' });
+		x$( "#main" ).before( "<a id='linkhandler'  target='frame0'>" );
 		var link = x$('#linkhandler')[0];
 		link.href = url;
 		//link.setAttribute('target', '_self')
@@ -46,9 +46,8 @@
 	</script>
     </head>
     <body >
-		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">
-			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame0" name="frame0" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
 		<div class="waitBox rounded-corners" id="wait"><img src="assets/images/ajax-loader.gif"> Hang On...</div>
 	</body>
