@@ -14,12 +14,50 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		
+        var isOverIFrame = false;
+
+	function processMouseOut() {
+            log("IFrame mouse >> OUT << detected.");
+            isOverIFrame = false;
+            top.focus();
+        }
+
+        function processMouseOver() {
+            log("IFrame mouse >> OVER << detected.");
+            isOverIFrame = true;
+        }
+
+        function processIFrameClick() {
+            if(isOverIFrame) {
+                // replace with your function
+                log("IFrame >> CLICK << detected. ");
+		busy();
+
+            }
+        }
+
+        function log(message) {
+            var console = document.getElementById("console");
+            var text = console.value;
+            text = text + message + "\n";
+            console.value = text;
+        }		
+		
+		
 	var state = 'ready';	
 
 	function onLocationChange(func, time) {
 	if(!time) time = 500;
 	var currLoc = '';
 	var currSrc = '';
+	
+	function log(message) {
+            var console = document.getElementById("console");
+            var text = console.value;
+            text = text + message + "\n";
+            console.value = text;
+        }
+
 	
 	setInterval(function() {
 		if(document.getElementById("frame1").contentDocument.location.href  != currLoc || document.getElementById("frame1").src != currSrc)
@@ -35,6 +73,7 @@
  
 	function openExternal(url)
 	{
+		x$('#frame1').css({ display : 'block' });
 		busy();
 		x$( "#frame1" ).attr('src', url);
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
@@ -45,7 +84,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		onLocationChange(busy,10);
+//		onLocationChange(busy,10);
 	}
 
 	function busy() {
@@ -61,9 +100,16 @@
 	</script>
     </head>
     <body>
- 		<div id="title_bar">My Time Tracker Pro</div>
-		<div id="main" class="view">
-			<iframe onload="ready()"  class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+		<div id="wrapper">
+			<div id="title_bar">My Time Tracker Pro</div>
+			<div id="main" class="view">
+				<form name="form" id="form" action="">
+					<textarea name="console" id="console" style="width: 100%; height: 100px;" cols="" rows=""></textarea>
+					<button name="clear" id="clear" type="reset">Clear</button>
+				</form>
+				<iframe onload="ready();"  class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+
+			</div>
 		</div>
 		<div class="waitBox rounded-corners" id="wait">Please wait..</div>
 <script>	

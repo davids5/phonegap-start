@@ -55,7 +55,10 @@ body {
 
 }
 
- 
+ #wrapper {
+      z-index: 50;
+
+ }
  .frame
  {
 	width: 100%;
