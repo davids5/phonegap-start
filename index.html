@@ -20,11 +20,11 @@
         function processIFrameClick() {
 
 		wdID = setTimeout(function() {
-				if (document.getElementById("frame1").contentDocument.readyState != 'complete') {
+				if (document.getElementById("frame1").contentDocument.readyState != 'complete' ||  document.readyState != "complete") {
 					busy();
 				}
 				
-			},200);
+			},400);
 
         }
 
@@ -35,7 +35,7 @@
 		setInterval(function() {
 			if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 			{
-			    clearTimeout(wdID);
+//			    clearTimeout(wdID);
 		            top.focus();
 			    currLoc = document.getElementById("frame1").contentDocument.location.href ;
 			    log(currLoc);
