@@ -23,19 +23,28 @@
 				if (document.getElementById("frame1").contentDocument.readyState != 'complete' ||  document.readyState != "complete") {
 					busy();
 				}
-				
-			},400);
+								
+			},200);
 
         }
 
-
+	var sp = 0;
+	var spinner = "\\|/-"
 	function onLocationChange(func, time) {
 	if(!time) time = 500;
 	var currLoc = '';
 		setInterval(function() {
+			try {
+			sp++;
+			if (sp>3) sp = 1;
+			
+			x$('#title_bar').html(spinner[sp]+"m:"+document.readyState + " f:" + document.getElementById("frame1").contentDocument.readyState);
+
+			} catch (err)
+			{}
 			if(document.getElementById("frame1").contentDocument.location.href  != currLoc)
 			{
-//			    clearTimeout(wdID);
+			    clearTimeout(wdID);
 		            top.focus();
 			    currLoc = document.getElementById("frame1").contentDocument.location.href ;
 			    log(currLoc);
@@ -58,7 +67,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
-		//onLocationChange(busy,100);
+		onLocationChange(busy,100);
 
 
 	}
