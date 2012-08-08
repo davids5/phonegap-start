@@ -43,14 +43,6 @@
             console.value = text;
         }		
 		
-		
-	var state = 'ready';	
-
-	function onLocationChange(func, time) {
-	if(!time) time = 500;
-	var currLoc = '';
-	var currSrc = '';
-	
 	function log(message) {
             var console = document.getElementById("console");
             var text = console.value;
@@ -58,17 +50,23 @@
             console.value = text;
         }
 
-	
-	setInterval(function() {
-		if(document.getElementById("frame1").contentDocument.location.href  != currLoc || document.getElementById("frame1").src != currSrc)
-		{
-		    currLoc = document.getElementById("frame1").contentDocument.location.href ;
-		    currSrc = document.getElementById("frame1").src;
-		    func(); //execute function
-		} else {
-			var id = setInterval(function() {ready(); clearInterval(id );},250);
-		}
-		}, time);
+		
+	var state = 'ready';	
+
+	function onLocationChange(func, time) {
+	if(!time) time = 500;
+	var currLoc = '';
+	var currSrc = '';
+		setInterval(function() {
+			if(document.getElementById("frame1").contentDocument.location.href  != currLoc || document.getElementById("frame1").src != currSrc)
+			{
+			    currLoc = document.getElementById("frame1").contentDocument.location.href ;
+			    currSrc = document.getElementById("frame1").src;
+			    func(); //execute function
+			} else {
+				var id = setInterval(function() {ready(); clearInterval(id );},250);
+			}
+			}, time);
 	}
  
 	function openExternal(url)
@@ -99,7 +97,7 @@
 
 	</script>
     </head>
-    <body>
+    <body  onunload="" onload="">
 		<div id="wrapper">
 			<div id="title_bar">My Time Tracker Pro</div>
 			<div id="main" class="view">
