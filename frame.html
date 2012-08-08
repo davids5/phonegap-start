@@ -6,12 +6,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
 	<title>My Time Tracker Pro</title>
-	<script src="phonegap.js" type="text/javascript" charset="utf-8" ></script>
-	<!--script src="assets/js/sim/phonegap-1.1.0.js" type="text/javascript" charset="utf-8" ></script-->
-	<!--script src="childbrowser.js" type="text/javascript" charset="utf-8"></script-->
 	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		
 
@@ -20,7 +15,7 @@
 		busy();
 		x$( "#frame1" ).attr('src', url);
 		x$('#frame1').css({ display : 'block' });
-		x$( "#main" ).before( "<a id='linkhandler' >" );
+		x$( "#main" ).before( "<a id='linkhandler'  target='frame1'>" );
 		var link = x$('#linkhandler')[0];
 		link.href = url;
 		//link.setAttribute('target', '_self')
@@ -45,7 +40,7 @@
 
 	</script>
     </head>
-    <body >
+    <body onload="openExternal('http://myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});">
 		<div id="title_bar">My Time Tracker Pro</div>
 		<div id="main" class="view">
 			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>

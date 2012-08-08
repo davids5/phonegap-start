@@ -9,7 +9,7 @@ run(function () {
             alert("No internet connection - we won't be able to track your time");
         } else {
 		try {
-			openExternal('http://www.myttpro.com',{ showLocationBar: false, showNavigationBar: false, showAddress: false});     
+			openExternal('http://www.myttpro.com/frame.html',{ showLocationBar: false, showNavigationBar: false, showAddress: false});     
                     }
                     catch (err)
                     {
