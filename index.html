@@ -16,7 +16,9 @@
 
 	function openExternal(url)
 	{
+		alert("1");
 		busy();
+		alert("2");
 		x$( "#frame0" ).attr('src', url);
 		x$('#frame0').css({ display : 'block' });
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame0'>" );
@@ -27,6 +29,7 @@
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
 		link.dispatchEvent(clickevent);
+		alert("3");
 	}
 
 	function frame_busy() {
@@ -49,6 +52,7 @@
 			<div id="title_bar">My Time Tracker Pro</div>
 			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame0" name="frame0" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
-		<div class="waitBox rounded-corners" id="wait">Hang on...</div>
+		<div class="waitBox rounded-corners" id="wait"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> <td valign="middle"><img src="assets/images/ajax-loader.gif" align="middle"></td><td  valign="middle">&nbsp;Hang on...</td></tr></table></div>
 </body>
 </html>
