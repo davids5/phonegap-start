@@ -15,7 +15,6 @@
 		David Sidrane
 	</author>
 
-	<preference name="phonegap-version" />
 	<!-- the default attribute can also be used -->
 	<icon src="assets/icons/icon48.png" gap:role="default" />  
 	<!-- Android icons -->
