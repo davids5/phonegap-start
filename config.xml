@@ -15,7 +15,7 @@
 		David Sidrane
 	</author>
 
-	<preference name="phonegap-version" value="1.1.0" />
+	<preference name="phonegap-version" />
 	<!-- the default attribute can also be used -->
 	<icon src="assets/icons/icon48.png" gap:role="default" />  
 	<!-- Android icons -->
@@ -37,7 +37,6 @@
 	<gap:splash src="assets/images/splash-xdpi.png" gap:platform="android" gap:density="xdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
-	<!--gap:plugin name="ChildBrowser" version="~3" /--> 
 
 	<preference name="orientation" value="default" />
 	<preference name="fullscreen" value="false" />
