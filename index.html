@@ -16,9 +16,6 @@
 
 	function openExternal(url)
 	{
-		alert("1");
-		busy();
-		alert("2");
 		x$( "#frame0" ).attr('src', url);
 		x$('#frame0').css({ display : 'block' });
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame0'>" );
@@ -28,8 +25,8 @@
 		
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
+		busy();
 		link.dispatchEvent(clickevent);
-		alert("3");
 	}
 
 	function frame_busy() {
