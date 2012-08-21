@@ -1,5 +1,6 @@
 call git add .
 @echo off
+set text=
 :Loop
 IF "%1"=="" GOTO Continue
 set text=%text% %1
