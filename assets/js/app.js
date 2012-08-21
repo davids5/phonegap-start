@@ -9,7 +9,6 @@ run(function () {
             alert("No internet connection - we won't be able to track your time");
         } else {
 		try {
-			window.localStorage.removeItem("first_run");
 			if (window.localStorage.getItem("first_run") == null) {
 			    openExternal('http://myttpro.com/frame.html?m=SignUp',{ showLocationBar: false, showNavigationBar: false, showAddress: false});
 			} else {
