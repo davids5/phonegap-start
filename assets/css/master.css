@@ -8,21 +8,25 @@ body {
 
 #title_bar {
   /* need a position set to something for z-index to take effect */
+ -moz-transition: all 2s ease-in-out;
+ -webkit-transition: all 2s ease-in-out;
+ -o-transition: all 2s ease-in-out;
+ transition: all 2s ease-in-out;
   position: relative;
   z-index: 1;
+  opacity: 1;
   background: #ccc;
   background: -webkit-gradient(linear, 0 0, 0 70%, from(#fff), to(#ccc));
   background: linear-gradient(#fff, #ccc 70%);
   color: #444;
   text-shadow: 0 1px 0 #fff;
   border-bottom: 1px solid #999;
-  height: 44px;
-  line-height: 44px;
+  height: 36px;
+  line-height: 36px;
   padding: 0;
   -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.3);
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
-
 
 #back_button {
   background: grey;
@@ -68,10 +72,9 @@ body {
  }
 .view {
 	width: 100%;
-	height:95%; 
+	height:100%;
 	padding: 0;
 	margin: 0;
 	display: block;
-        background:#FFF;
+	background:#FFF;
 }
-
