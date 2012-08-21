@@ -17,16 +17,24 @@
 
 	<preference name="phonegap-version" value="1.9.0" />
 	<!-- the default attribute can also be used -->
-	<icon src="assets/icons/icon48.png" gap:role="default" />  
+	
+	<!-- iOS icons -->
+	<icon src="assets/icons/ios/icon.png" width="57" height="57" />
+	<icon src="assets/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="assets/icons/ios/icon_at_2x.png" width="114" height="114" />
+
 	<!-- Android icons -->
-	<icon src="assets/icons/icon36.png" width="36" height="36"/>
-	<icon src="assets/icons/icon48.png" width="48" height="48"/>
-	<icon src="assets/icons/icon72.png" width="72" height="72"/>  
+	<icon src="assets/icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="assets/icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="assets/icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="assets/icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+	
+
 	<!-- if a single splash screen is specified it will be used for all platforms -->
 
 	<gap:splash src="assets/images/spash-bb.png" gap:platform="blackberry" />
 
-	<gap:splash src="assets/images/splash-320x480png" width="320" height="480" />
+	<gap:splash src="assets/images/splash-320x480.png" width="320" height="480" />
 	<gap:splash src="assets/images/splash-640x960.png" width="640" height="960" />
 	<gap:splash src="assets/images/splash-1024x768.png" width="1024" height="768" />
 	<gap:splash src="assets/images/splash-768x1024.png" width="768" height="1024" />
@@ -37,12 +45,12 @@
 	<gap:splash src="assets/images/splash-xdpi.png" gap:platform="android" gap:density="xdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
-
+	<preference name="prerendered-icon" value="true" />
 	<preference name="orientation" value="default" />
 	<preference name="fullscreen" value="false" />
 	<preference name="stay-in-webview" value="true" />
-	
-
+	<preference name="webviewbounce" value="false" />
+	<preference name="show-splash-screen-spinner" value="false" />
 	<access origin="*" subdomains="true" />
 
 </widget>
