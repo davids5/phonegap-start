@@ -38,9 +38,13 @@
 		x$('#wait').css({ display : 'none' });
 	}
 
+	function get(name){
+	   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+	      return decodeURIComponent(name[1]);
+	}
 	</script>
     </head>
-    <body onLoad="openExternal('http://myttpro.com');">
+    <body onLoad="openExternal('http://myttpro.com' + location.search);">
 		<div id="main" class="view">
 			<iframe onload="ready();"  onunload="busy();" class="frame" id="frame1" name="frame1" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
