@@ -10,6 +10,10 @@ body {
 }
 
 #title_bar {
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 4s ease-in-out;
+  -o-transition: all 4 ease-in-out;
+  transition: all 4s ease-in-out;
   /* need a position set to something for z-index to take effect */
   position: relative;
   z-index: 1;

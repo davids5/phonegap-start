@@ -27,6 +27,7 @@
 		clickevent.initEvent('click', true, true); 
 		busy();
 		link.dispatchEvent(clickevent);
+		x$('#title_bar').css({height: '0px', opacity : '0'});
 	}
 
 	function frame_busy() {
