@@ -6,6 +6,7 @@ set text=%text% %1
 SHIFT
 GOTO Loop
 :Continue
+for /f "tokens=* delims= " %%a in ("%text%") do set text=%%a
 @echo on
-call git commit -m"%text:~1%"
+call git commit -m"%text%"
 call git push
