@@ -28,6 +28,12 @@
 		busy();
 		link.dispatchEvent(clickevent);
 		setTimeout(function(){ x$('#title_bar').css({height: '0px', opacity : '0'}); },5000);
+		if (device.platform.match("Android")){
+			document.addEventListener("backbutton", function(){
+					return false;
+			}, false);
+		}
+
 	}
 	
 	function frame_busy() {
@@ -42,6 +48,7 @@
 	function ready() {
 		x$('#wait').css({ display : 'none' });
 	}
+
 
 	</script>
     </head>
