@@ -51,6 +51,7 @@
 	<preference name="stay-in-webview" value="false" />
 	<preference name="webviewbounce" value="false" />
 	<preference name="show-splash-screen-spinner" value="false" />
-	<access origin="*" subdomains="true" />
+	<access origin="http://myttpro.com/" subdomains="true" />
+	<access origin="http://mytimetrackerpro.com/" browserOnly="true" />
 
 </widget>
