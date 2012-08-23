@@ -28,10 +28,11 @@
 		busy();
 		link.dispatchEvent(clickevent);
 		setTimeout(function(){ x$('#title_bar').css({height: '0px', opacity : '0'}); },5000);
-		document.addEventListener("backbutton", function()
-					  {
-						return false;
-					  }, false);
+		if (device.platform.match("Android")){
+			document.addEventListener("backbutton", function(){
+					return false;
+			}, false);
+		}
 
 	}
 	
