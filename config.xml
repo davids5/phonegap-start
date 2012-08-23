@@ -48,7 +48,7 @@
 	<preference name="prerendered-icon" value="false" />
 	<preference name="orientation" value="default" />
 	<preference name="fullscreen" value="false" />
-	<preference name="stay-in-webview" value="true" />
+	<preference name="stay-in-webview" value="false" />
 	<preference name="webviewbounce" value="false" />
 	<preference name="show-splash-screen-spinner" value="false" />
 	<access origin="*" subdomains="true" />
