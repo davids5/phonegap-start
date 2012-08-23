@@ -11,9 +11,9 @@ body {
 
 #title_bar {
   -moz-transition: all 1s ease-in-out;
-  -webkit-transition: all 4s ease-in-out;
-  -o-transition: all 4 ease-in-out;
-  transition: all 4s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -o-transition: all 1 ease-in-out;
+  transition: all 1s ease-in-out;
   /* need a position set to something for z-index to take effect */
   position: relative;
   z-index: 1;
@@ -26,7 +26,6 @@ body {
   height: 30px;
   line-height: 30px;
   padding: 0;
-  margin-bottom: 5px;
   -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.3);
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
