@@ -14,9 +14,19 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 
+
+	function updateOrientation(e) {
+	      alert("OK");
+	      switch (e.orientation) {
+		  case 90:
+		      break;
+		  case -90:
+		      break;
+	      }
+	}
 	function openExternal(url)
 	{
-		x$(document).on('orientationChanged', updateOrientation, false);
+		document.addEventListener('orientationChanged', updateOrientation, false);
 		x$( "#frame0" ).attr('src', url);
 		x$('#frame0').css({ display : 'block' });
 		x$( "#main" ).before( "<a id='linkhandler'  target='frame0'>" );
@@ -50,15 +60,7 @@
 		x$('#wait').css({ display : 'none' });
 	}
 
-	function updateOrientation(e) {
-	      alert("OK");
-	      switch (e.orientation) {
-		  case 90:
-		      break;
-		  case -90:
-		      break;
-	      }
-	  }
+	
 
 	</script>
     </head>
