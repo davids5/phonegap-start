@@ -25,7 +25,6 @@
 		
 		var clickevent = document.createEvent("UIEvents"); 
 		clickevent.initEvent('click', true, true); 
-		busy();
 		link.dispatchEvent(clickevent);
 		setTimeout(function(){ x$('#title_bar').css({height: '0px', opacity : '0'}); },5000);
 		if (device.platform.match("Android")){
@@ -36,28 +35,13 @@
 
 	}
 	
-	function frame_busy() {
-		busy();
-	}
-	function busy() {
-		x$('#wait').css({ display : 'block' });
-	}
-	function frame_ready() {
-		ready();
-	}
-	function ready() {
-		x$('#wait').css({ display : 'none' });
-	}
-
 	</script>
     </head>
     <body >
 		
 		<div id="main" class="view">
 		<div id="title_bar">My Time Tracker Pro</div>			
-		<iframe onload="ready();"  onunload="busy();" class="frame" id="frame0" name="frame0" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+		<iframe class="frame" id="frame0" name="frame0" frameborder="1" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 		</div>
-		<div class="waitBox rounded-corners" id="wait"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> <td valign="middle"><img src="assets/images/ajax-loader.gif" align="middle"></td><td  valign="middle">&nbsp;Hang on...</td></tr></table></div>
 </body>
 </html>

@@ -35,34 +35,7 @@ body {
   background: grey;
 }
 
-.rounded-corners {
-     -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-}
 
-.waitBox {
-  
-	color:#fff;
-	text-align:center;
-	background:#666;
-	z-index: 20;
-	padding:15px;
-	border: 6px white double;
-  	position:absolute;
-	width:auto;
-	height:auto; 
-	display:none; 
-	z-index:99; 
-	top:50%; 
-	left:50%; 
-	margin-top:-37px; 
-	margin-left:-81px;
-
-}
-
- 
  .frame
  {
 	width: inherit;
