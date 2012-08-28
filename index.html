@@ -30,7 +30,8 @@
 		setTimeout(function(){ x$('#title_bar').css({height: '0px', opacity : '0'}); },5000);
 		if (device.platform.match("Android")){
 			document.addEventListener("backbutton", function(){
-					return false;
+				navigator.app.exitApp();
+				return false;
 			}, false);
 		}
 
