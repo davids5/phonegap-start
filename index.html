@@ -14,6 +14,20 @@
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 
+
+	function PG(_t) {
+	    this.window = _t;
+	    this.condSet = function(obj) {
+		return typeof(this.window[obj]) != 'undefined' ? this.window[obj] : 0 ;
+		}
+	    this.navigator = this.condSet('navigator');
+	    this.cordova = this.condSet('cordova');
+	    this.screen = this.condSet('screen');
+	    this.$ = function(name) { return this.window[""+name];}
+	}
+
+	var _pg = _pg || new PG(this);
+
 	function openExternal(url)
 	{
 		x$( "#frame0" ).attr('src', url);
@@ -37,7 +51,6 @@
 				return false;
 			}, false);
 		}
-
 	}
 	
 	function frame_busy() {
@@ -51,7 +64,7 @@
 	}
 	function ready() {
 		x$('#wait').css({ display : 'none' });
-		frame0.hello(this);
+		frame0.hello(_pg);
 	}
 
 
