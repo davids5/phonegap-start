@@ -20,14 +20,25 @@
 	    this.condSet = function(obj) {
 		return typeof(this.window[obj]) != 'undefined' ? this.window[obj] : 0 ;
 		}
+	    this.frame0 = this.condSet('frame0');
+	    this.frame1 = 0;
 	    this.navigator = this.condSet('navigator');
 	    this.cordova = this.condSet('cordova');
 	    this.screen = this.condSet('screen');
 	    this.$ = function(name) { return this.window[""+name];}
+	    this.called = 0;
+	    this.register = function() {
+		if (!called) {
+	         called++;
+		 frame0.hello(this);
+		}
+	    }
+    	    this.ack = function(frm) {
+		this.frame1 = frm;
+	    }
 	}
 
 	var _pg = _pg || new PG(this);
-	var called;
 
 	function openExternal(url)
 	{
@@ -66,8 +77,7 @@
 	}
 	function ready() {
 		x$('#wait').css({ display : 'none' });
-		called++;
-		frame0.hello(_pg);
+		_pg.register();
 	}
 
 
